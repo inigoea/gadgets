@@ -1,0 +1,88 @@
+<Module>
+<ModulePrefs title="Files Explorer" title_url="https://sites.google" description="jquery File Tree explorer" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_input" display_name="Embedding input" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/jqueryFileTree.js"></script>
+	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/jquery.easing.js"></script>
+	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/fileExplorer_tableAccess.js"></script>
+	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/fileExplorer_Actions.js"></script>
+	<link href="https://gadgets-bbvanc.rhcloud.com/fileExplorer/css/jqueryFileTree.css" rel="stylesheet">
+    <link href="https://gadgets-bbvanc.rhcloud.com/fileExplorer/css/bootstrap.css" rel="stylesheet">	
+	<style>
+	.modal-backdrop.in{
+		opacity: 0 !important;
+	}
+	</style>
+	</div> 
+	<script type="text/javascript"> function onLoad() {
+		var prefs = new _IG_Prefs();
+		var result = prefs.getString('embed_input');
+		var dest = document.getElementById('googleTable');
+		googleTable.value = result; };
+		gadgets.util.registerOnLoadHandler(onLoad); 
+	</script>
+	<script>
+		$(document).ready(function(){
+			//load spresheet
+			var sample_url = document.getElementById('googleTable').value;//"https://spreadsheets.google.com/pub?key=1pkh55kHi2hS7ln498OG7wUYCZDaIEpkBoN4xY_g3byg&output=html";
+			var url_parameter = document.location.search.split(/\?url=/)[1]
+			var url = sample_url;
+			var googleSpreadsheet = new GoogleSpreadsheet();
+			googleSpreadsheet.url(url);
+			googleSpreadsheet.load(function(result) {
+				//console.log(JSON.stringify(result.data));
+			
+			$('#fileTreeDemo_1').fileTree({ root: '', script: '', },result.data , function(file) {
+				//alert(file);
+			});
+			});
+		});	
+	</script>
+	
+	<div class="modal fade bs-example-modal-lg" id="fileExplorerModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="modal-title">Default title</h4>
+		  </div>
+		  <div class="modal-body" id="modal-body">
+			here the body....
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+			<button id="modal-button-url" type="button" class="btn btn-primary">Ir al documento</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<input type='text' id="googleTable" style="display: none;" />
+	<div class="example">
+		<div id="fileTreeDemo_1" class="demo"></div>
+	</div>
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+Google Spreedsheet URL:<br /> 
+<input type="text" id="embed_input" style="width: 100%" value="https://spreadsheets.google.com/pub?key=1pkh55kHi2hS7ln498OG7wUYCZDaIEpkBoN4xY_g3byg&output=html" ></input> 
+<script type="text/javascript"> 
+function registerHandlers() {
+ var prefs = new gadgets.Prefs();
+ var pref = document.getElementById('embed_input');
+ var handler = function() {
+ prefs.set('embed_input', document.getElementById('embed_input').value); 
+ }; pref.onchange = handler; pref.onkeyup = handler; 
+ }
+ gadgets.util.registerOnLoadHandler(registerHandlers);
+</script>
+]]>
+</Content>
+</Module>

@@ -1,0 +1,113 @@
+<Module>
+<ModulePrefs title="Noticias" title_url="https://sites.google" description="Noticias" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_input" display_name="input" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://gadgets-bbvanc.rhcloud.com/noticias/tableAccess.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://gadgets-bbvanc.rhcloud.com/noticias/css/bootstrap.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/noticias/css/reset.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/noticias/css/layers.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/noticias/css/blue.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/noticias/css/style.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/noticias/css/font-awesome.css" rel="stylesheet">
+	
+	
+	<script>
+		$(document).ready(function(){
+			var sample_url = "https://spreadsheets.google.com/pub?key=1n2Q3HOxxAlEn-E8jmlimMrUiZ3MDl7RoMG4R6n7sQRk&output=html";
+			var url_parameter = document.location.search.split(/\?url=/)[1]
+			var url = sample_url;
+			var googleSpreadsheet = new GoogleSpreadsheet();
+			googleSpreadsheet.url(url);
+			googleSpreadsheet.load(function(result) {
+				var i = 0;
+				var _html = '<div class="row Top-News">';
+				$.each(result.data , function (key, value){
+					if( i < 2){
+						_html += generateBlock(value["id"],value["image"], value["category"], value["title"] , value["body"]);
+						i++;
+					}else{
+						_html += '</div><div class="divcod30"></div><div class="row Top-News">';
+						_html += generateBlock(value["id"],value["image"], value["category"], value["title"] , value["body"]);
+						i = 1;
+					}
+				});
+				_html = _html + '</div>';
+				$("#container").html(_html);
+				$("#noticiasLoading").hide();
+				$("#noticiasWelcome").show();
+				
+				$.each(result.data , function (key, value){
+					$("." + value["id"]).click(function(){
+						$("#modal-title").text(value["title"]);
+						$("#modal-body").html(value["body"]);
+						$("#noticiasModal1").modal('show');
+					});
+				});
+				
+			});
+		});
+
+		function generateBlock(id, image, category, title, body){
+		var _html = '<div class="block-News text-center col-md-6">' +
+					'<div class="Top-img-news">' +
+						'<img src="' + image + '" alt="blog" width="293" height="205">' +
+					'</div>' +
+					'<div class="Bottom-title-news">' +
+						'<div class="data-news text-left">' +
+						   '<p>Category: ' + category + '</p>' +
+						 '</div>' +
+						 '<div class="title-news text-left">' +
+						   '<a class="' + id + '" href="#"><h2>' + title + '</h2></a>' +
+						   '<p>';
+		if(body.length > 250)
+			var _html = _html + body.substring(0,247) + '...';
+		else
+			var _html = _html + body;
+		var _html = _html + '</p>' +
+						 '</div>' +
+						 '<div class="Get-news text-left">' +
+							'<a class="' + id + '" href="#">Leer más</a>' +
+						 '</div>' +
+					 '</div>' +
+                '</div>';
+		return _html;
+		};
+	</script>
+
+<div id="noticiasLoading" ><img src="https://gadgets-bbvanc.rhcloud.com/noticias/css/images/loading_spinner.gif"/></div>
+
+<div class="modal fade bs-example-modal-lg" id="noticiasModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="modal-title">Default title</h4>
+		  </div>
+		  <div class="modal-body" id="modal-body">
+			here the body....
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		  </div>
+		</div>
+	  </div>
+</div>
+
+<section id="noticiasWelcome" class="light-wrapper" style="display:none;">
+	<div id="container" class="container inner">	
+    </div>
+</section>
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+
+]]>
+</Content>
+</Module>

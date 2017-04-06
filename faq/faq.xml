@@ -1,0 +1,126 @@
+<Module>
+<ModulePrefs title="Faq gadget" title_url="http://sites.google.com/" description="Frequently asked questions gadget" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="Inigo">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_snippet" display_name="Embedding snippet" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://gadgets-bbvanc.rhcloud.com/faq/tableAccess.js"></script>
+<script>
+
+//Global variables
+	var data_result;
+
+$(document).ready(function(){
+	var sample_url = "https://spreadsheets.google.com/pub?key=1n7RZxe_5L2O2ndrcORXz6zqF8hpY_zu3VThBCEEvlvk&output=html";
+    var url_parameter = document.location.search.split(/\?url=/)[1]
+    var url = sample_url;
+    var googleSpreadsheet = new GoogleSpreadsheet();
+    googleSpreadsheet.url(url);
+    googleSpreadsheet.load(function(result) {
+		data_result = result.data;
+		//$('#debug').html(JSON.stringify(result.data));
+		if($("#searchInput").val().length > 0)
+		searchFromTextInput();
+	});
+	
+	
+	$("#searchButton").click(function(){
+		searchFromTextInput();
+	});
+	$("#searchInput").keypress(function (e) {
+		var key = e.which;
+		if(key == 13)  // the enter key code
+		{
+			searchFromTextInput();
+		}
+	});
+	
+	var path_keys = getUrlParameter('parent');
+	if( path_keys!=null && path_keys.length > 0 ){
+		$("#searchInput").val(path_keys.replace(/\+/g, ' '));
+	}
+	
+
+});
+
+function searchFromTextInput(){
+		var $contains = [];
+		$html_to_print = "";
+		$keyWords = omitirAcentos($("#searchInput").val().toLowerCase()).split(" ");
+		for( var i = 0 ; i < data_result.length ; i++ ){
+			//var res = data_result[i].keys.split(",");
+			$originalText = omitirAcentos(data_result[i].keys.toLowerCase());
+			for( var x = 0; x < $keyWords.length; x++ ){
+				$searchText = $keyWords[x];
+				if ($originalText.search($searchText) >= 0){
+					$contains.push(data_result[i].quest);
+						
+					$html_to_print +=
+						'<div  class="panel panel-default">'+
+							'<div class="panel-heading" role="tab" id="heading' + data_result[i].id + '">'+
+								'<h4 class="panel-title">'+
+									'<a role="button" data-toggle="collapse" data-parent="#accordion" href="#' + data_result[i].id + '" aria-expanded="false" aria-controls="' + data_result[i].id + '">'+
+										data_result[i].quest +
+									'</a>'+
+								'</h4>'+
+							'</div>'+
+							'<div id="' + data_result[i].id + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + data_result[i].id + '">'+
+								'<div class="panel-body">'+
+									data_result[i].texto+
+								'</div>'+
+							'</div>'+
+						'</div>';
+					break;
+				}
+			}
+		}
+		if($html_to_print.length === 0){
+			$html_to_print = '<span>No se han encontrado resultados, por favor ponte en contacto con '+
+							 '<a src="mailto:coordinacion_eepp_es@bbva.com">coordinacion_eepp_es@bbva.com</a></span>';
+			
+		}
+		$("#accordion").html($html_to_print);
+}
+
+</script>
+
+
+<div class="row" style="padding:20px;">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button id="searchButton" class="btn btn-default" type="button">Buscar</button>
+      </span>
+      <input id="searchInput" type="text" class="form-control" placeholder="Palabras clave...">
+    </div>
+  </div>
+</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"  style="padding:20px;">
+	<!-- Results will print here -->
+  </div>
+</div>  
+<div id="debug"></div>  
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+Embedding snippet:<br /> 
+<textarea id="embed_snippet" style="height: 200px; width: 100%" >__UP_embed_snippet__</textarea> 
+<script type="text/javascript"> 
+function registerHandlers() { // Get userprefs
+ var prefs = new gadgets.Prefs();
+ var pref = document.getElementById('embed_snippet');
+ var handler = function() {
+ prefs.set('embed_snippet', document.getElementById('embed_snippet').value); 
+ }; pref.onchange = handler; pref.onkeyup = handler; 
+ }
+ gadgets.util.registerOnLoadHandler(registerHandlers);
+</script>
+]]>
+</Content>
+</Module>

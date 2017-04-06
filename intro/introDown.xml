@@ -1,0 +1,111 @@
+<Module>
+<ModulePrefs title="Intro" title_url="https://sites.google" description="Intro Down" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_input" display_name="input" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://gadgets-bbvanc.rhcloud.com/intro/css/bootstrap.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/reset.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/layers.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/blue.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/style.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/font-awesome.css" rel="stylesheet">
+	<style>
+	.modal-backdrop.in{
+		opacity: 0 !important;
+	}
+	</style>
+	<script>
+		$(document).ready(function(){
+			var v = Math.random();
+			$.getJSON( "https://gadgets-bbvanc.rhcloud.com/intro/data.json?random=" + v, function( data ) {
+				$.each( data, function( key, val ) {
+					$("#"+key).html(val);
+				});
+				$("#introLoading").hide();
+				$("#Welcome").show();
+				$(".welcome-Block").click(function(){
+					var id = $(this).attr('id');
+					$("#modal-title").html(data["block-modal-title"+id]);
+					$("#modal-body").html(data["block-modal-body"+id]);
+					$('#IntroModal1').modal('show');
+				});
+			});
+		
+		});	
+	</script>
+	
+	<div class="modal fade bs-example-modal-lg" id="IntroModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="modal-title">Objectivos</h4>
+		  </div>
+		  <div class="modal-body" id="modal-body">
+			here the body....
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div id="introLoading"><img src="https://gadgets-bbvanc.rhcloud.com/intro/css/images/loading_spinner.gif"/></div>
+	
+	<section id="Welcome" class="light-wrapper" style="display:none;">
+	<div class="container inner" style="padding-top:30px;">
+	    <div class="divcod30"></div>
+    	<div class="row">
+			<div class="col-md-4" style="width: 33.33333333%; float:left; cursor: pointer;">
+				<div class="welcome-Block text-center" id="1">
+					<div class="Top-welcome">
+						<i class="icon icon-ChartUp"></i>
+						<h4 id="block-title1">block-title1</h4>
+					</div>
+					<div class="Bottom-welcome">
+						<p id="block-body1">block-body1</p>
+						<a href="#">Leer más</a>
+					</div>
+				</div>
+            </div>
+			<div class="col-md-4" style="width: 33.33333333%; float:left; cursor: pointer;">
+				<div class="welcome-Block text-center" id="2">
+					<div class="Top-welcome">
+						<i class="icon icon-Cloud"></i>
+						<h4 id="block-title2">block-title2</h4>
+					</div>
+					<div class="Bottom-welcome">
+						<p id="block-body2">block-body2</p>
+						<a  href="#">Leer más</a>
+					</div>
+				</div>
+            </div>
+			<div class="col-md-4" style="width: 33.33333333%; float:left; cursor: pointer;">
+				<div class="welcome-Block text-center" id="3">
+					<div class="Top-welcome">
+						<i class="icon icon-Like"></i>
+						<h4 id="block-title3">block-title3</h4>
+					</div>
+					<div class="Bottom-welcome">
+						<p id="block-body3">block-body3</p>
+						<a href="#">Leer más</a>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+
+]]>
+</Content>
+</Module>

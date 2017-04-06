@@ -1,0 +1,90 @@
+<Module>
+<ModulePrefs title="Enviroment Availability" title_url="http://ltrub103.igrupobbva:8082/env_availability/#/" description="Show enviroment availability in your Google Site" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_snippet" display_name="Embedding snippet" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://gadgets-bbvanc.rhcloud.com/enviromentAvailability/bootstrap.css" rel="stylesheet">
+    <link href="https://gadgets-bbvanc.rhcloud.com/enviromentAvailability/batch.css" rel="stylesheet">
+	
+	<script>
+	var env_wald={"Desarrollo": "de","Integrado": "ei", "AUS": "au"};
+	var tableHtml="";
+	$(document).ready(function(){
+		$.each(env_wald , function(value, key){
+			$.getJSON("https://ltrub103.igrupobbva:8445/seriston-api/rest/check/ASO/"+ key +"/serviceContainerChecker", function(result) {
+				tableHtml += '<tr><td class="title" colspan="'+ Object.keys(result).length +'"><h2>' + value + '</h2></td></tr><tr style="padding-bottom:5px">';
+				var i = 0;
+				$.each(result, function(name, field){
+					i++;
+					if(i>4){
+						tableHtml += '</tr><tr style="padding-bottom:5px">'; 
+						i = 0;
+					}
+					tableHtml += '<td " class="ng-binding"><table><tr><td style="width: 100px;">';
+					tableHtml += '<span class="ng-binding">' + name + '</span></td><td>';
+					if(field){
+						tableHtml +='<img src="https://gadgets-bbvanc.rhcloud.com/enviromentAvailability/img/green.png" style="width: 20px;margin-left:10px;">';
+					}else{
+						tableHtml +='<img src="https://gadgets-bbvanc.rhcloud.com/enviromentAvailability/img/red.png" style="width: 20px;margin-left:10px;">';
+					}
+					tableHtml +='</td></tr></table></td>';	
+				});
+				
+				
+				//$("#enviromentTable").text(result["services"]);
+			}).done(function(){
+				tableHtml += '</tr>';
+				console.log(tableHtml);
+				$("#loading").hide();
+				$("#enviromentTable").html(tableHtml);
+			}).fail(function() {
+				console.log( "error" );
+				$("#enviromentTable").text("error");
+			});
+			
+		});
+	});
+		
+	</script>
+
+	
+    <div class="refresh">
+    	<button class="btn btn-primary" onClick="window.location.reload()"><span class="glyphicon glyphicon-refresh"></span>Refresh</button>
+    </div>
+    <div id="principal">
+		<!--<span id="text"></span>-->
+		<table class="aui aui-zebra table-hover" style="border-bottom: 1px solid #cccccc;">
+	    	<tbody id="enviromentTable">
+				<img id="loading" src="https://gadgets-bbvanc.rhcloud.com/enviromentAvailability/img/loader.gif" height="40">
+			</tbody>
+		</table>	
+	</div>
+    <footer id="footer" role="contentinfo">
+      <div class="footer-body">
+        <div id="footer-logo"></div>
+      </div>
+    </footer>
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+Embedding snippet:<br /> 
+<textarea id="embed_snippet" style="height: 200px; width: 100%" >__UP_embed_snippet__</textarea> 
+<script type="text/javascript"> 
+function registerHandlers() { // Get userprefs
+ var prefs = new gadgets.Prefs();
+ var pref = document.getElementById('embed_snippet');
+ var handler = function() {
+ prefs.set('embed_snippet', document.getElementById('embed_snippet').value); 
+ }; pref.onchange = handler; pref.onkeyup = handler; 
+ }
+ gadgets.util.registerOnLoadHandler(registerHandlers);
+</script>
+]]>
+</Content>
+</Module>

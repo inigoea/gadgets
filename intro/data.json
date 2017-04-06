@@ -1,0 +1,16 @@
+{
+	"title-head":"Bienvenidos a Coordinacion de Entornos Previos",
+	"title-body":"Nos encargamos de dar soporte de primer nivel a los equipos de desarrollo, ayudando y agilizando la resoluci&oacute;n de incidencias o dudas en los Entornos Previos.",
+	"block-title1":"Incremento de la calidad",
+	"block-body1":"Garantizando la estabilidad de los Entornos Previos y suministrando datos de prueba para facilitar la ejecuci&oacute;n de pruebas funcionales",
+	"block-title2":"Entorno de AUS",
+	"block-body2":"Plan de creaci&oacute;n de un entorno Pre-Productivo, estableciendo un gobierno funcional, t&eacute;cnico y de gesti&oacute;n del dato.",
+	"block-title3":"PET",
+	"block-body3":"Objetivos alineados con el Plan de Evoluci&oacute;n Tecnol&oacute;gica BBVA",
+	"block-modal-title1":"Objectivos de calidad",
+	"block-modal-body1":"<ul><li><b>Soporte de Primer Nivel</b> en la resoluci&oacute;n de incidencias y consultas en EEPP.</li></ul>",
+	"block-modal-title2":"Objectivos de AUS",
+	"block-modal-body2":"<ul><li><b>Disponer de un Entorno Pre-Productivo</b> similar a Producci&oacute;n en casu&iacute;stica de datos de prueba y piezas de  infraestructura necesarias.</li><li><b>Establecer la Estrategia de Entornos Previos</b> para Sistemas Espa&ntilde;a, racionalizando el n&uacute;mero de Entornos reduciendo el coste sin perder la estabilidad y la disponibilidad.</li></ul>",
+	"block-modal-title3":"Objectivos de PET",
+	"block-modal-body3":"<ul><li><b>Aplicar</b> los nuevos modelos de Entornos definidos desde Holding (Virtualizaci&oacute;n de Entornos, creaci&oacute;n de mini-Entornos, etc.)</li></ul>"
+}

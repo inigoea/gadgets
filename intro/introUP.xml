@@ -1,0 +1,54 @@
+<Module>
+<ModulePrefs title="Intro" title_url="https://sites.google" description="Intro Up" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_input" display_name="input" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://gadgets-bbvanc.rhcloud.com/intro/css/bootstrap.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/reset.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/layers.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/blue.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/style.css" rel="stylesheet">
+	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/font-awesome.css" rel="stylesheet">
+	<script>
+		$(document).ready(function(){
+			
+			var v = Math.random();
+			$.getJSON( "https://gadgets-bbvanc.rhcloud.com/intro/data.json?random=" + v, function( data ) {
+				$.each( data, function( key, val ) {
+					$("#"+key).html(val);
+				});
+				$("#introLoading").hide();
+				$("#Welcome").show();
+			});
+		
+		});	
+	</script>
+
+	<div id="introLoading"><img src="https://gadgets-bbvanc.rhcloud.com/intro/css/images/loading_spinner.gif"/></div>
+	
+	<section id="Welcome" class="light-wrapper" style="display:none;">
+	<div class="container inner">
+    	<div class="row">
+        	<div class="col-md-12" style="width: 100%;">
+                <div class="title-section text-center">
+                    <h3 id="title-head">title-head</h3>
+                </div>
+                <div class="description-welcome text-center">
+                    <p id="title-body">title-body</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+
+]]>
+</Content>
+</Module>
