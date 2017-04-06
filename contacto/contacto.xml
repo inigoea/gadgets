@@ -6,12 +6,12 @@
 <Content type="html" view="home">
 <![CDATA[
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link href="https://gadgets-bbvanc.rhcloud.com/contacto/css/bootstrap.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/contacto/css/reset.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/contacto/css/layers.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/contacto/css/blue.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/contacto/css/style.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/contacto/css/font-awesome.css" rel="stylesheet">
+    <link href="https://inigoea.github.io/gadgets/contacto/css/bootstrap.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/contacto/css/reset.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/contacto/css/layers.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/contacto/css/blue.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/contacto/css/style.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/contacto/css/font-awesome.css" rel="stylesheet">
 
 	<script>
 		$(document).ready(function(){
@@ -59,7 +59,7 @@
 			<div class="col-md-3">
             	<div class="Team-Block">
                     <div class="Top-Img-Team">
-                        <img src="https://gadgets-bbvanc.rhcloud.com/contacto/css/images/gabi.jpg" alt="Team" width="211" height="211">
+                        <img src="https://inigoea.github.io/gadgets/contacto/css/images/gabi.jpg" alt="Team" width="211" height="211">
                     </div>
                     <div class="Title-TeamBlock">
                         <h4>Gabriel Camiña</h4>
@@ -77,7 +77,7 @@
 			<div class="col-md-3">
             	<div class="Team-Block">
                     <div class="Top-Img-Team">
-                        <img src="https://gadgets-bbvanc.rhcloud.com/contacto/css/images/oscar.jpg" alt="Team" width="211" height="211">
+                        <img src="https://inigoea.github.io/gadgets/contacto/css/images/oscar.jpg" alt="Team" width="211" height="211">
                     </div>
                     <div class="Title-TeamBlock">
                         <h4>Oscar de la Plaza</h4>

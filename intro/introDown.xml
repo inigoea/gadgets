@@ -7,12 +7,12 @@
 <![CDATA[
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://gadgets-bbvanc.rhcloud.com/intro/css/bootstrap.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/reset.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/layers.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/blue.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/style.css" rel="stylesheet">
-	<link href="https://gadgets-bbvanc.rhcloud.com/intro/css/font-awesome.css" rel="stylesheet">
+    <link href="https://inigoea.github.io/gadgets/intro/css/bootstrap.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/intro/css/reset.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/intro/css/layers.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/intro/css/blue.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/intro/css/style.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/intro/css/font-awesome.css" rel="stylesheet">
 	<style>
 	.modal-backdrop.in{
 		opacity: 0 !important;
@@ -21,7 +21,7 @@
 	<script>
 		$(document).ready(function(){
 			var v = Math.random();
-			$.getJSON( "https://gadgets-bbvanc.rhcloud.com/intro/data.json?random=" + v, function( data ) {
+			$.getJSON( "https://inigoea.github.io/gadgets/intro/data.json?random=" + v, function( data ) {
 				$.each( data, function( key, val ) {
 					$("#"+key).html(val);
 				});
@@ -55,7 +55,7 @@
 	  </div>
 	</div>
 	
-	<div id="introLoading"><img src="https://gadgets-bbvanc.rhcloud.com/intro/css/images/loading_spinner.gif"/></div>
+	<div id="introLoading"><img src="https://inigoea.github.io/gadgets/intro/css/images/loading_spinner.gif"/></div>
 	
 	<section id="Welcome" class="light-wrapper" style="display:none;">
 	<div class="container inner" style="padding-top:30px;">

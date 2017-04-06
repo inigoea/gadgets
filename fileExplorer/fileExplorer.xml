@@ -7,12 +7,12 @@
 <![CDATA[
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/jqueryFileTree.js"></script>
-	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/jquery.easing.js"></script>
-	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/fileExplorer_tableAccess.js"></script>
-	<script src="https://gadgets-bbvanc.rhcloud.com/fileExplorer/js/fileExplorer_Actions.js"></script>
-	<link href="https://gadgets-bbvanc.rhcloud.com/fileExplorer/css/jqueryFileTree.css" rel="stylesheet">
-    <link href="https://gadgets-bbvanc.rhcloud.com/fileExplorer/css/bootstrap.css" rel="stylesheet">	
+	<script src="https://inigoea.github.io/gadgets/fileExplorer/js/jqueryFileTree.js"></script>
+	<script src="https://inigoea.github.io/gadgets/fileExplorer/js/jquery.easing.js"></script>
+	<script src="https://inigoea.github.io/gadgets/fileExplorer/js/fileExplorer_tableAccess.js"></script>
+	<script src="https://inigoea.github.io/gadgets/fileExplorer/js/fileExplorer_Actions.js"></script>
+	<link href="https://inigoea.github.io/gadgets/fileExplorer/css/jqueryFileTree.css" rel="stylesheet">
+    <link href="https://inigoea.github.io/gadgets/fileExplorer/css/bootstrap.css" rel="stylesheet">	
 	<style>
 	.modal-backdrop.in{
 		opacity: 0 !important;
