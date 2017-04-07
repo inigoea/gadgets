@@ -113,11 +113,11 @@
 
 		</div>
 	</div>
-	</section>
-	<section id="subscribe">
-		<input type="text" id="emailSubs" name="emailSubs"/>
+	<div>
+		<input type="text" id="emailSubs" name="emailSubs"></input>
 		<button onclick="postToGoogle()">Post me</button>
-	</section>
+	</div>
+
 ]]>
 </Content>
 <Content type="html" view="configuration" preferred_height="240">
