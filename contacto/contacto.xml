@@ -16,7 +16,7 @@
 	<script>
 		$(document).ready(function(){
 			
-			$('#input-form').one('submit',function(){
+			$('#mc-embedded-subscribe-form').one('submit',function(){
 				var inputq1 = encodeURIComponent($('#input-q1').val());
 				var q1ID = "entry.1330974523";
 				var baseURL = 'https://docs.google.com/forms/d/1kgBa4DJ0aYgMD3FStZ8LSWtRcSZolVbXXkntVEyeg9g/formResponse?';
@@ -24,7 +24,6 @@
 				var submitURL = (baseURL + q1ID + "=" + inputq1 + submitRef);
 				console.log(submitURL);
 				$(this)[0].action=submitURL;
-				$('#input-feedback').text('Thank You!');
 			});
 		
 		});
@@ -109,15 +108,16 @@
 <section id="Newsletter" class="light-wrapper">
 	<div class="container inner">
 		<div class="row">
-        	<div class="col-md-12">
+        	<div class="col-md-12" style="width: 100%;">
                 <div class="title-section text-center">
                     <h3>Subscribete a nuestros comunicados</h3>
 				</div>
+				<div class="line-break"></div>
 			</div>
 		</div>
 		<div class="row">
 			<div id="mc_embed_signup" class="Join-Newsletter">
-				<form id="input-form" action="" method="POST" target="no-target" class="validate">
+				<form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" action="" method="POST" target="no-target" class="validate">
 				  <input id="input-q1" class="txt-box required email" placeholder="EMAIL" name="q1">
 				  <input type="submit" value="Solicitar" name="subscribe" id="form-submit" class="button btn btnjoin">
 				</form>
