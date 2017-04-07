@@ -14,6 +14,26 @@
 	<link href="https://inigoea.github.io/gadgets/contacto/css/font-awesome.css" rel="stylesheet">
 
 	<script>
+		
+		function postToGoogle() {
+            var field3 = $('#emailSubs').val();
+
+            $.ajax({
+            url: "https://docs.google.com/forms/d/1kgBa4DJ0aYgMD3FStZ8LSWtRcSZolVbXXkntVEyeg9g/formResponse",
+            data: {"entry.347455363": field3},
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0: function() {
+                    //Success message
+                },
+                200: function() {
+                    //Success Message
+                }
+            }
+        });
+        }
+	
 		$(document).ready(function(){
 		});
 	</script>
@@ -77,10 +97,10 @@
 			<div class="col-md-3">
             	<div class="Team-Block">
                     <div class="Top-Img-Team">
-                        <img src="https://inigoea.github.io/gadgets/contacto/css/images/oscar.jpg" alt="Team" width="211" height="211">
+                        <img src="https://inigoea.github.io/gadgets/contacto/css/images/blonde.png" alt="Team" width="211" height="211">
                     </div>
                     <div class="Title-TeamBlock">
-                        <h4>Oscar de la Plaza</h4>
+                        <h4>Silvia Rodriguez</h4>
                         <p>Senior Assistant</p>
                     </div>
                     <div class="Contact-TeamBlock">
@@ -93,7 +113,11 @@
 
 		</div>
 	</div>
-
+	</section>
+	<section id="subscribe">
+		<input type="text" id="emailSubs" name="emailSubs"/>
+		<button onclick="postToGoogle()">Post me</button>
+	</section>
 ]]>
 </Content>
 <Content type="html" view="configuration" preferred_height="240">
