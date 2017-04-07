@@ -107,7 +107,7 @@
 	</div>
 	<div>
 		<form id="input-form" action="" method="POST" target="no-target">
-		  <input id="input-q1" placeholder="q1" name="q1">
+		  <input id="input-q1" placeholder="email" name="q1">
 		  <button id="form-submit" type="submit">SUBMIT</button>
 		</form>
 	</div>
