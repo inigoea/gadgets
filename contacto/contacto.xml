@@ -106,10 +106,22 @@
 		</div>
 	</div>
 	<div>
-		<form id="input-form" action="" method="POST" target="no-target">
-		  <input id="input-q1" placeholder="email" name="q1">
-		  <button id="form-submit" type="submit">SUBMIT</button>
-		</form>
+		<div class="row">
+        	<div class="col-md-12">
+                <div class="title-section text-center">
+                    <h3>Subscribe to our Newsletter</h3>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="mc_embed_signup" class="Join-Newsletter">
+				<form id="input-form" action="" method="POST" target="no-target" class="validate">
+				  <input id="input-q1" class="txt-box required email" placeholder="EMAIL" name="q1">
+				  <input type="submit" value="Join" name="subscribe" id="form-submit" class="button btn btnjoin">
+				</form>
+            </div>
+        </div>
+		
 	</div>
 
 ]]>
