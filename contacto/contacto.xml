@@ -111,7 +111,7 @@
         	<div class="col-md-12" style="width: 100%;">
                 <div class="title-section text-center">
                     <h3>Subscribete a nuestros comunicados</h3>
-					<div class="line-break"></div>
+					<div class="line-break" style="padding:5px;"></div>
 				</div>
 			</div>
 		</div>
