@@ -14,27 +14,19 @@
 	<link href="https://inigoea.github.io/gadgets/contacto/css/font-awesome.css" rel="stylesheet">
 
 	<script>
-		
-		function postToGoogle() {
-            var field3 = $('#emailSubs').val();
-
-            $.ajax({
-            url: "https://docs.google.com/forms/d/1kgBa4DJ0aYgMD3FStZ8LSWtRcSZolVbXXkntVEyeg9g/formResponse",
-            data: {"entry.347455363": field3},
-            type: "POST",
-            dataType: "xml",
-            statusCode: {
-                0: function() {
-                    //Success message
-                },
-                200: function() {
-                    //Success Message
-                }
-            }
-        });
-        }
-	
 		$(document).ready(function(){
+			
+			$('#input-form').one('submit',function(){
+				var inputq1 = encodeURIComponent($('#input-q1').val());
+				var q1ID = "entry.1330974523";
+				var baseURL = 'https://docs.google.com/forms/d/1kgBa4DJ0aYgMD3FStZ8LSWtRcSZolVbXXkntVEyeg9g/formResponse?';
+				var submitRef = '&submit=1974248255546005522';
+				var submitURL = (baseURL + q1ID + "=" + inputq1 + submitRef);
+				console.log(submitURL);
+				$(this)[0].action=submitURL;
+				$('#input-feedback').text('Thank You!');
+			});
+		
 		});
 	</script>
 
@@ -114,8 +106,10 @@
 		</div>
 	</div>
 	<div>
-		<input type="text" id="emailSubs" name="emailSubs"></input>
-		<button onclick="postToGoogle()">Post me</button>
+		<form id="input-form" action="" method="POST" target="no-target">
+		  <input id="input-q1" placeholder="q1" name="q1">
+		  <button id="form-submit" type="submit">SUBMIT</button>
+		</form>
 	</div>
 
 ]]>
