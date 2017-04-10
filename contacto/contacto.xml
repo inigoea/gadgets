@@ -17,19 +17,13 @@
 		$(document).ready(function(){
 			
 			$('#mc-embedded-subscribe-form').one('submit',function(){
-				
 				var inputq1 = encodeURIComponent($('#input-q1').val());
-				var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-				if (testEmail.test(valueToTest)){
 				var q1ID = "entry.1330974523";
-					var baseURL = 'https://docs.google.com/forms/d/1kgBa4DJ0aYgMD3FStZ8LSWtRcSZolVbXXkntVEyeg9g/formResponse?';
-					var submitRef = '&submit=1974248255546005522';
-					var submitURL = (baseURL + q1ID + "=" + inputq1 + submitRef);
-					console.log(submitURL);
-					$(this)[0].action=submitURL;
-				}else{
-					
-				}
+				var baseURL = 'https://docs.google.com/forms/d/1kgBa4DJ0aYgMD3FStZ8LSWtRcSZolVbXXkntVEyeg9g/formResponse?';
+				var submitRef = '&submit=1974248255546005522';
+				var submitURL = (baseURL + q1ID + "=" + inputq1 + submitRef);
+				console.log(submitURL);
+				$(this)[0].action=submitURL;
 			});
 			
 			function isBbvaEmail(email) {
@@ -129,10 +123,11 @@
 		<div class="row">
 			<div id="mc_embed_signup" class="Join-Newsletter">
 				<form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" action="" method="POST" target="no-target" class="validate">
-					<div class="form-group">
-						<input id="input-q1" type="email" class="txt-box required email form-control" data-fv-emailaddress-message="The value is not a valid email address" placeholder="EMAIL" name="q1">
-						<input type="submit" value="Solicitar" name="subscribe" id="form-submit" class="button btn btnjoin">
-					</div>  
+					<input id="input-q1" type="email" 
+					class="txt-box required email" 
+					pattern="[a-z0-9._%+-]+@bbva.com"
+					placeholder="EMAIL" name="q1">
+					<input type="submit" value="Solicitar" name="subscribe" id="form-submit" class="button btn btnjoin">
 				</form>
             </div>
         </div>
