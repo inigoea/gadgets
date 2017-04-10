@@ -15,7 +15,6 @@
 
 	<script>
 		$(document).ready(function(){
-			
 			$('#mc-embedded-subscribe-form').one('submit',function(){
 				var inputq1 = encodeURIComponent($('#input-q1').val());
 				var q1ID = "entry.1330974523";
@@ -25,12 +24,6 @@
 				console.log(submitURL);
 				$(this)[0].action=submitURL;
 			});
-			
-			function isBbvaEmail(email) {
-			  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-			  return regex.test(email);
-			}
-		
 		});
 	</script>
 
