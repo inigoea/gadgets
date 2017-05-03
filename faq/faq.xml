@@ -104,7 +104,7 @@ function searchFromTextInput(){
   </div>
 </div>  
 <div id="debug"></div>  
-
+<div></div>
 ]]>
 </Content>
 <Content type="html" view="configuration" preferred_height="240">
