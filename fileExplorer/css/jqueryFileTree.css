@@ -89,5 +89,6 @@ UL.jqueryFileTree A:hover {
 .jqueryFileTree LI.ext_xls { background: url(images/xls.png) left top no-repeat; }
 .jqueryFileTree LI.ext_xml { background: url(images/code.png) left top no-repeat; }
 .jqueryFileTree LI.ext_zip { background: url(images/zip.png) left top no-repeat; }
+.jqueryFileTree LI.ext_form { background: url(images/forms.png) left top no-repeat; }
 .jqueryFileTree LI.ext_calendar { background: url(images/calendar.png) left top no-repeat; }
 .jqueryFileTree LI.ext_google { background: url(images/google.png) left top no-repeat; }

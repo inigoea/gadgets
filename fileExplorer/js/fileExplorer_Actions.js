@@ -10,6 +10,15 @@ function fileAction_html(fileName , filePath){
 	}
 };
 
+function fileAction_form(fileName , filePath){
+	var win = window.open(filePath, '_blank');
+	if (win) {
+		win.focus();
+	} else {
+		alert('Please allow popups for this website');
+	}
+};
+
 function fileAction_google(fileName , filePath){
 	var win = window.open(filePath, '_blank');
 	if (win) {
