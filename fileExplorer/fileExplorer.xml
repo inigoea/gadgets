@@ -12,7 +12,7 @@
 	<script src="https://inigoea.github.io/gadgets/fileExplorer/js/fileExplorer_tableAccess.js"></script>
 	<script src="https://inigoea.github.io/gadgets/fileExplorer/js/fileExplorer_Actions.js"></script>
 	<link href="https://inigoea.github.io/gadgets/fileExplorer/css/jqueryFileTree.css" rel="stylesheet">
-    <link href="https://inigoea.github.io/gadgets/fileExplorer/css/bootstrap.css" rel="stylesheet">	
+    <link href="https://inigoea.github.io/gadgets/fileExplorer/css/bootstrap.css" rel="stylesheet">
 	<style>
 	.modal-backdrop.in{
 		opacity: 0 !important;
