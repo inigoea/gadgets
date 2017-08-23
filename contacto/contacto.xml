@@ -102,8 +102,44 @@
 					</div>
                 </div>
             </div>
-
 		</div>
+		<div class="row">
+			<div class="col-md-3">
+            	<div class="Team-Block">
+                    <div class="Top-Img-Team">
+                        <img src="https://inigoea.github.io/gadgets/contacto/css/images/desconocido.jpg" alt="Team" width="211" height="211">
+                    </div>
+                    <div class="Title-TeamBlock">
+                        <h4>Victor Montero</h4>
+                        <p>APX Support</p>
+                    </div>
+                    <div class="Contact-TeamBlock">
+						<ul>
+							<li><a href="mailto:victor.montero@bbva.com"><i class="fa fa-envelope-o"></i></a></li>
+							<li><a href="tel:+34914552624"><i class="fa fa-phone"></i></a></li>
+						</ul>
+					</div>
+                </div>
+            </div>
+			<div class="col-md-3">
+            	<div class="Team-Block">
+                    <div class="Top-Img-Team">
+                        <img src="https://inigoea.github.io/gadgets/contacto/css/images/desconocido.jpg" alt="Team" width="211" height="211">
+                    </div>
+                    <div class="Title-TeamBlock">
+                        <h4>Carlos Lopez</h4>
+                        <p>APX Support</p>
+                    </div>
+                    <div class="Contact-TeamBlock">
+						<ul>
+							<li><a href="mailto:carlos.lopez.areu@bbva.com"><i class="fa fa-envelope-o"></i></a></li>
+							<li><a href="tel:+34914552624"><i class="fa fa-phone"></i></a></li>
+							<li><a href="https://plus.google.com/113289076934577298864" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+						</ul>
+					</div>
+                </div>
+            </div>
+		</div>	
 	</div>
 </section>
 <section id="Newsletter" class="light-wrapper">
