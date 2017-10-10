@@ -179,7 +179,7 @@
 		</div>
 		<div class="row">
 			<div class="form-textarea">
-				<textarea class="txt-box textArea" name="message" cols="40" rows="7" id="messageTxt" placeholder="Cuentanos que te ha gustado y que mejorarias o simplemente envianos un hola..." spellcheck="true" required=""></textarea>
+				<textarea class="txt-box textArea" name="message" cols="40" rows="7" id="messageTxt" placeholder="Cuéntanos que te ha gustado y que mejorarías o simplemente envíanos un hola..." spellcheck="true" required=""></textarea>
 			</div>
 		</div>
 		<div class="form-submit">
