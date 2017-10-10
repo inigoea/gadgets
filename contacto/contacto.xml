@@ -27,7 +27,7 @@
 		});
 	</script>
 
-<section id="Team" class="light-wrapper">
+<section id="Team" class="light-wrapper" hidden>
 	<div class="container inner">
     	<div class="row">
 			<div class="col-md-3">
@@ -164,6 +164,27 @@
             </div>
         </div>
 	</div>
+</section>
+<section id="FeedBack" class="">
+<section id="Newsletter" class="light-wrapper">
+	<div class="container inner">
+		<div class="row">
+        	<div class="col-md-12" style="width: 100%;padding: 15px;">
+                <div class="title-section text-center">
+                    <h3>Subscribete a nuestros comunicados</h3>
+					<div class="line-break"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-textarea">
+				<textarea class="txt-box textArea" name="message" cols="40" rows="7" id="messageTxt" placeholder="Message" spellcheck="true" required=""></textarea>
+			</div>
+		</div>
+		<div class="form-submit">
+			<input type="submit" class="btn btn-large main-bg" value="Send">
+		</div>
+	</div>	
 </section>
 ]]>
 </Content>
