@@ -34,6 +34,8 @@
 				var submitURL2 = (baseURL2 + q2ID + "=" + feedbackTxt + submitRef2);
 				console.log(submitURL2);
 				$(this)[0].action=submitURL2;
+				$("#mc-embedded-feedback-form").hide();
+				$("#feedback-from-thanks").show();
 			});
 		});
 	</script>
@@ -196,7 +198,10 @@
 				<div class="form-submit">
 					<input type="submit" class="btn btn-large main-bg" value="Enviar">
 				</div>
-			</form>	
+			</form>
+			<div id="feedback-from-thanks" style="text-align: center;" hidden>
+				<h4>Gracias por tu aportación</h4>
+			</div>
 		</div>
 	</div>	
 </section>
