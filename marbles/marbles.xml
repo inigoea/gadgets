@@ -42,7 +42,7 @@
 <script type="text/javascript">
 /*function onLoad() {
 		var prefs = new _IG_Prefs();
-		var result = prefs.getArray('embed_input_left');
+		var result = prefs.getString('embed_input_left');
 		//var dest = document.getElementById('googleTable');
 		//googleTable.value = result; };
 	}*/
@@ -59,7 +59,7 @@ function registerHandlers() {
 	});
  var handler = function() {
  console.log("items values are: "+items);
- prefs.set('embed_input_left', "meow");
+ prefs.setArray('embed_input_left', items);
  }; prefs.onchange = handler; prefs.onkeyup = handler; 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
