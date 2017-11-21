@@ -54,8 +54,8 @@ function registerHandlers() {
 	 //var pref_div = document.getElementById('left_menu_div');
 	 var items = [];
 	 $('input').each(function(idx, item){
-		items.push(item.value);
-		console.log("item.value: "+item.value);
+		items.push(item.text);
+		console.log("item.value: "+item.text);
 		});
 	 var handler = function() {
 		console.log("items values are: "+items);
@@ -69,9 +69,10 @@ function registerHandlers() {
 
 Marbles Left:<br />
 <div id="left_menu_div">
-	<input class="input_data" type="text" style="width: 50%" value="Name" ></input>
-	<input class="input_data" type="text" style="width: 50%" value="Url" ></input>
-</div> 
+	<input id="name_0" class="input_data" type="text" style="width: 50%" value="Name" ></input>
+	<input id="url_0" class="input_data" type="text" style="width: 50%" value="Url" ></input>
+</div>
+<button>
 ]]>
 </Content>
 </Module>
