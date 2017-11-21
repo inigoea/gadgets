@@ -17,6 +17,7 @@
 	<script type="text/javascript"> function onLoad() {
 		var prefs = new _IG_Prefs();
 		var result = prefs.getArray('embed_input_left');
+		console.log("embed_input_left array values are: "+result);
 		var dest = document.getElementById('test').innerHTML = result;
 		};
 		gadgets.util.registerOnLoadHandler(onLoad); 
@@ -39,12 +40,12 @@
 <![CDATA[
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-function onLoad() {
+/*function onLoad() {
 		var prefs = new _IG_Prefs();
 		var result = prefs.getArray('embed_input_left');
 		//var dest = document.getElementById('googleTable');
 		//googleTable.value = result; };
-	}
+	}*/
 
 
  
@@ -54,10 +55,12 @@ function registerHandlers() {
  var items = [];
  $('input').each(function(idx, item){
     items.push(item.value);
+	console.log("item.value: "+item.value);
 	});
  var handler = function() {
+ console.log("items values are: "+items);
  prefs.set('embed_input_left', items);
- }; //pref.onchange = handler; pref.onkeyup = handler; 
+ }; prefs.onchange = handler; prefs.onkeyup = handler; 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
 </script>
