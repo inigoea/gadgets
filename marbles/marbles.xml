@@ -61,8 +61,8 @@ function registerHandlers() {
 		console.log("items values are: "+items);
 		prefs.setArray('embed_input_left', items);
 	 }; 
-	 $('.input_data').onchange = handler; 
-	 $('.input_data').onkeyup = handler; 
+	 $('.input_data').change(handler); 
+	 $('.input_data').keyup(handler); 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
 </script>
