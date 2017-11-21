@@ -50,25 +50,27 @@
 
  
 function registerHandlers() {
- var prefs = new gadgets.Prefs();
- //var pref_div = document.getElementById('left_menu_div');
- var items = [];
- $('input').each(function(idx, item){
-    items.push(item.value);
-	console.log("item.value: "+item.value);
-	});
- var handler = function() {
- console.log("items values are: "+items);
- prefs.setArray('embed_input_left', items);
- }; prefs.onchange = handler; prefs.onkeyup = handler; 
+	 var prefs = new gadgets.Prefs();
+	 //var pref_div = document.getElementById('left_menu_div');
+	 var items = [];
+	 $('input').each(function(idx, item){
+		items.push(item.value);
+		console.log("item.value: "+item.value);
+		});
+	 var handler = function() {
+		console.log("items values are: "+items);
+		prefs.setArray('embed_input_left', items);
+	 }; 
+	 $('.input_data').onchange = handler; 
+	 $('.input_data').onkeyup = handler; 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
 </script>
 
 Marbles Left:<br />
 <div id="left_menu_div">
-	<input class="input_name" type="text" style="width: 50%" value="Name" ></input>
-	<input class="input_url" type="text" style="width: 50%" value="Url" ></input>
+	<input class="input_data" type="text" style="width: 50%" value="Name" ></input>
+	<input class="input_data" type="text" style="width: 50%" value="Url" ></input>
 </div> 
 ]]>
 </Content>
