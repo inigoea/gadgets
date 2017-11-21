@@ -17,16 +17,14 @@
 	<script type="text/javascript"> function onLoad() {
 		var prefs = new _IG_Prefs();
 		var result = prefs.getArray('embed_input_left');
-		var dest = document.getElementById('test');
-		dest.html(result); };
+		var dest = document.getElementById('test').innerHTML = result;
+		};
 		gadgets.util.registerOnLoadHandler(onLoad); 
 	</script>
 	<script>
 		$(document).ready(function(){
 			//load spresheet
-			//document.getElementById('test').html();
-			
-			});
+			//document.getElementById('test').innerHTML ;
 		});	
 	</script>
 	
