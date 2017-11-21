@@ -1,5 +1,5 @@
 <Module>
-<ModulePrefs title="Files Explorer" title_url="https://sites.google" description="jquery File Tree explorer" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<ModulePrefs title="marbles" title_url="https://sites.google" description="jquery marbles menu" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
 <Require feature="setprefs"/>
 </ModulePrefs>
 <UserPref name="embed_input_left" display_name="Embedding input left" required="true"/>
@@ -59,7 +59,7 @@ function registerHandlers() {
 	});
  var handler = function() {
  prefs.set('embed_input_left', items);
- }; pref.onchange = handler; pref.onkeyup = handler; 
+ }; //pref.onchange = handler; pref.onkeyup = handler; 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
 </script>
