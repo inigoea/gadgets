@@ -59,7 +59,7 @@ function registerHandlers() {
 	});
  var handler = function() {
  console.log("items values are: "+items);
- prefs.set('embed_input_left', items);
+ prefs.set('embed_input_left', "meow");
  }; prefs.onchange = handler; prefs.onkeyup = handler; 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
