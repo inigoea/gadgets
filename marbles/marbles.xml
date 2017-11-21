@@ -1,0 +1,74 @@
+<Module>
+<ModulePrefs title="Files Explorer" title_url="https://sites.google" description="jquery File Tree explorer" thumbnail="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-thumb.png" screenshot="http://www.gstatic.com/sites-gadgets/common/images/sites-icon-gadget-ss.png" height="400" width="400" author="inigo elejalde">
+<Require feature="setprefs"/>
+</ModulePrefs>
+<UserPref name="embed_input_left" display_name="Embedding input left" required="true"/>
+<Content type="html" view="home">
+<![CDATA[
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://inigoea.github.io/gadgets/marbles/css/bootstrap.css" rel="stylesheet">
+	<style>
+	.modal-backdrop.in{
+		opacity: 0 !important;
+	}
+	</style>
+	</div> 
+	<script type="text/javascript"> function onLoad() {
+		var prefs = new _IG_Prefs();
+		var result = prefs.getArray('embed_input_left');
+		var dest = document.getElementById('test');
+		dest.html(result); };
+		gadgets.util.registerOnLoadHandler(onLoad); 
+	</script>
+	<script>
+		$(document).ready(function(){
+			//load spresheet
+			//document.getElementById('test').html();
+			
+			});
+		});	
+	</script>
+	
+	<div class="" id="test">
+
+	</div>
+
+
+]]>
+</Content>
+<Content type="html" view="configuration" preferred_height="240">
+<![CDATA[
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+function onLoad() {
+		var prefs = new _IG_Prefs();
+		var result = prefs.getArray('embed_input_left');
+		//var dest = document.getElementById('googleTable');
+		//googleTable.value = result; };
+	}
+
+
+ 
+function registerHandlers() {
+ var prefs = new gadgets.Prefs();
+ //var pref_div = document.getElementById('left_menu_div');
+ var items = [];
+ $('input').each(function(idx, item){
+    items.push(item.value);
+	});
+ var handler = function() {
+ prefs.set('embed_input_left', items);
+ }; pref.onchange = handler; pref.onkeyup = handler; 
+ }
+ gadgets.util.registerOnLoadHandler(registerHandlers);
+</script>
+
+Marbles Left:<br />
+<div id="left_menu_div">
+	<input class="input_name" type="text" style="width: 50%" value="Name" ></input>
+	<input class="input_url" type="text" style="width: 50%" value="Url" ></input>
+</div> 
+]]>
+</Content>
+</Module>
