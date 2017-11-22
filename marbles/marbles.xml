@@ -66,14 +66,13 @@ function removeLine(line){
  
 function registerHandlers() {
 	 var prefs = new gadgets.Prefs();
-	 //var pref_div = document.getElementById('left_menu_div');
 	 var items = [];
 	 
 	 var handler = function() {
 		items = [];
 		$('input').each(function(idx, item){
-		items.push(item.text);
-		console.log("item.value: "+item.text);
+		items.push(item.value);
+		console.log("item.value: "+item.value);
 		}); 
 		console.log("items values are: "+items);
 		prefs.setArray('embed_input_left', items);
