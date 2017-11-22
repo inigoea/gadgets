@@ -51,7 +51,7 @@ var totalLine = 0;
 function addLine(){
 	totalLine++;
 	console.log("addLine" + totalLine);
-	divString = "<div id=\"left_menu_div_"+totalLine+"\">\
+	divString = "<div style=\"margin-top: 10px;\" id=\"left_menu_div_"+totalLine+"\">\
 		<input id=\"name_"+totalLine+"\" class=\"input_data\" type=\"text\" style=\"width: 40%\"></input>\
 		<input id=\"url_"+totalLine+"\" class=\"input_data\" type=\"text\" style=\"width: 40%\"></input>\
 		<button style=\"width: 10%\" onclick=\"removeLine("+totalLine+")\">Del</button>\
@@ -76,8 +76,8 @@ function registerHandlers() {
 		console.log("items values are: "+items);
 		prefs.setArray('embed_input_left', items);
 	 }; 
-	 $('.input_data').change(handler); 
-	 $('.input_data').keyup(handler); 
+	 //$('.input_data').change(handler); 
+	 //$('.input_data').keyup(handler); 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
 </script>
@@ -90,8 +90,8 @@ Marbles Left:<br />
 		<button style="width: 10%" onclick="removeLine(0)">Del</button>
 	</div>
 </div>
-<button style="width: 10%" onclick="addLine()">Add</button>
-
+<button style="width: 10% float:left;" onclick="addLine()">Add</button>
+<button style="width: 10% float:right;background:#99ff99;" onclick="handler">Save</button>
 ]]>
 </Content>
 </Module>
