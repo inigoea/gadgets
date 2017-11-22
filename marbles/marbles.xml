@@ -27,7 +27,7 @@
 				//name
 				name = item.value;
 			}
-			console.log("embed_input_left value "+ counter +" is: " + item.value);
+			console.log("embed_input_left value is: " + item.value);
 		});
 			
 			$('#test').append(item.value + " // ");
