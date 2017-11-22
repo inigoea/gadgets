@@ -76,7 +76,7 @@ function registerHandlers() {
 		console.log("items values are: "+items);
 		prefs.setArray('embed_input_left', items);
 	 }; 
-	 //$('.input_data').change(handler); 
+	 $('#saveButton').click(handler); 
 	 //$('.input_data').keyup(handler); 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
@@ -91,7 +91,7 @@ Marbles Left:<br />
 	</div>
 </div>
 <button style="width: 10% float:left;" onclick="addLine()">Add</button>
-<button style="width: 10% float:right;background:#99ff99;" onclick="handler">Save</button>
+<button id="saveButton" style="width: 10% float:right;background:#99ff99;">Save</button>
 ]]>
 </Content>
 </Module>
