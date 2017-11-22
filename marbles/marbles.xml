@@ -21,16 +21,15 @@
 		$.each( obj, function(idx, item){
 			if((idx+1)%2==0){
 				//url
-				var boton = "<a href=\"" + item.value + "\">" + name + "</a>";
+				var boton = "<a href=\"" + item + "\">" + name + "</a>";
 				$('#test').append(boton);
 			}else{
 				//name
-				name = item.value;
+				name = item;
 			}
-			console.log("embed_input_left value is: " + item.value);
+			console.log("embed_input_left value is: " + item);
 		});
 			
-			$('#test').append(item.value + " // ");
 		};
 		gadgets.util.registerOnLoadHandler(onLoad); 
 	</script>
