@@ -16,9 +16,10 @@
 	</div> 
 	<script type="text/javascript"> function onLoad() {
 		var prefs = new _IG_Prefs();
-		var result = prefs.getArray('embed_input_left');
-		console.log("embed_input_left array values are: "+result);
-		var dest = document.getElementById('test').innerHTML = result;
+		var arrayObj = prefs.getArray('embed_input_left');
+		$.each( arrayObj, function(idx, item){
+			console.log("embed_input_left array values are: "+item.value);
+			$('#test').append(item.value + " // ");
 		};
 		gadgets.util.registerOnLoadHandler(onLoad); 
 	</script>
@@ -40,12 +41,12 @@
 <![CDATA[
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-/*function onLoad() {
+function onLoad() {
 		var prefs = new _IG_Prefs();
-		var result = prefs.getString('embed_input_left');
-		//var dest = document.getElementById('googleTable');
+		var result = prefs.getArray('embed_input_left');
+		
 		//googleTable.value = result; };
-	}*/
+	}
 var totalLine = 0;
 	
 function addLine(){
@@ -66,19 +67,18 @@ function removeLine(line){
  
 function registerHandlers() {
 	 var prefs = new gadgets.Prefs();
-	 var items = [];
+	 //var items = [];
 	 
 	 var handler = function() {
-		items = [];
+		//items = [];
 		$('input').each(function(idx, item){
-		items.push(item.value);
+		//items.push(item.value);
 		console.log("item.value: "+item.value);
 		}); 
-		console.log("items values are: "+items);
-		prefs.setArray('embed_input_left', items);
+		//console.log("items values are: "+items);
+		prefs.setArray('embed_input_left', $('input'));
 	 }; 
 	 $('#saveButton').click(handler); 
-	 //$('.input_data').keyup(handler); 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
 </script>
@@ -91,8 +91,10 @@ Marbles Left:<br />
 		<button style="width: 10%" onclick="removeLine(0)">Del</button>
 	</div>
 </div>
-<button style="width: 10% float:left;" onclick="addLine()">Add</button>
-<button id="saveButton" style="width: 10% float:right;background:#99ff99;">Save</button>
+<div sytle="margin-top: 20px;">
+	<button style="width: 10% ;float:left;" onclick="addLine()">Add</button>
+	<button id="saveButton" style="width: 10% float:right;background:#99ff99;">Save</button>
+</div>
 ]]>
 </Content>
 </Module>
