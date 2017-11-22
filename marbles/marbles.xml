@@ -80,10 +80,10 @@ Marbles Left:<br />
 	<div id="left_menu_div_0">
 		<input id="name_0" class="input_data" type="text" style="width: 40%" value="Name" ></input>
 		<input id="url_0" class="input_data" type="text" style="width: 40%" value="Url" ></input>
-		<button style="width: 10%" onclick="removeLine(0)"/>
+		<button style="width: 10%" onclick="removeLine(0)">Del</button>
 	</div>
 </div>
-<button style="width: 10%" onclick="addLine()"/>
+<button style="width: 10%" onclick="addLine()">Add</button>
 
 ]]>
 </Content>
