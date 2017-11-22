@@ -16,7 +16,7 @@
 	</div> 
 	<script type="text/javascript"> function onLoad() {
 		var prefs = new _IG_Prefs();
-		var arrayObj = prefs.getArray('embed_input_left');
+		var arrayObj = prefs.get('embed_input_left');
 		$.each( arrayObj, function(idx, item){
 			console.log("embed_input_left array values are: "+item.value);
 			$('#test').append(item.value + " // ");
@@ -77,7 +77,7 @@ function registerHandlers() {
 		console.log("item.value: "+item.value);
 		}); 
 		//console.log("items values are: "+items);
-		prefs.setArray('embed_input_left', $('input'));
+		prefs.set('embed_input_left', $('input'));
 	 }; 
 	 $('#saveButton').click(handler); 
  }
