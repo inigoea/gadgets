@@ -46,8 +46,16 @@
 		//var dest = document.getElementById('googleTable');
 		//googleTable.value = result; };
 	}*/
+var totalLine = 0;
+	
+function addLine(){
+	totalLine++;
+	console.log("addLine" + totalLine);
+	}
 
-
+function removeLine(line){
+	console.log("remove line: "+line);
+	}
  
 function registerHandlers() {
 	 var prefs = new gadgets.Prefs();
@@ -69,10 +77,14 @@ function registerHandlers() {
 
 Marbles Left:<br />
 <div id="left_menu_div">
-	<input id="name_0" class="input_data" type="text" style="width: 50%" value="Name" ></input>
-	<input id="url_0" class="input_data" type="text" style="width: 50%" value="Url" ></input>
+	<div id="left_menu_div_0">
+		<input id="name_0" class="input_data" type="text" style="width: 40%" value="Name" ></input>
+		<input id="url_0" class="input_data" type="text" style="width: 40%" value="Url" ></input>
+		<button style="width: 10%" onclick="removeLine(0)"/>
+	</div>
 </div>
-<button>
+<button style="width: 10%" onclick="addLine()"/>
+
 ]]>
 </Content>
 </Module>
