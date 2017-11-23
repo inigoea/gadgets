@@ -57,20 +57,23 @@
 <![CDATA[
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+var totalLine = 0;
+
 function loadData() {
 		var prefs = new _IG_Prefs();
-		var result = prefs.getArray('embed_input_left');
-		console.log("Array: " + result);
+		var result = prefs.getArray('embed_input_left');	
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
-				$("#url_"+idx).val(item);
+				console.log("Array: " + result);
+				$("#url_"+idx-(totalLine+1)).val(item);
 			}else{
 				if(idx > 0){addLine();}
-				$("#name_"+idx).val(item);
+				$("#name_"+idx-totalLine).val(item);
 			}
 		});
 	}
-var totalLine = 0;
+
 	
 function addLine(){
 	totalLine++;
@@ -108,10 +111,12 @@ function registerHandlers() {
 </script>
 
 Marbles Left:<br />
+<div><div style="width: 40% ;float:left;text-align:center;">Name</div>
+<div style="width: 60% ;float:right;text-align:center;">URL</div></div>
 <div id="left_menu_div" style="margin-bottom: 10px; margin-top: 10px;">
 	<div id="left_menu_div_0">
-		<input id="name_0" class="input_data" type="text" style="width: 40%" value="Name" ></input>
-		<input id="url_0" class="input_data" type="text" style="width: 40%" value="Url" ></input>
+		<input id="name_0" class="input_data" type="text" style="width: 40%" ></input>
+		<input id="url_0" class="input_data" type="text" style="width: 40%" ></input>
 		<button style="width: 10%" onclick="removeLine(0)">Del</button>
 	</div>
 </div>
