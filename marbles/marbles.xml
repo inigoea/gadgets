@@ -44,11 +44,12 @@
 		});	
 	</script>
 	
-	<div class="" id="left_buttons">
+	<div style="width: 50%;float: left;" id="left_buttons">
 	</div>
 	<div class="float:right" id="right_buttons">
-		<button type="button" class="btn btn-primary btn-round" onclick="redirect('https://sites.google.com/a/bbva.com/arquitectura-ingenieria-espana/')"><font size="2">Arq España</font></button>
+		<button style="float: right;" type="button" class="btn btn-primary btn-round" onclick="redirect('https://sites.google.com/a/bbva.com/arquitectura-ingenieria-espana/')"><font size="2">Arq España</font></button>
 	</div>
+	<img src="https://inigoea.github.io/gadgets/marbles/img/cabecera.img">
 
 
 ]]>
