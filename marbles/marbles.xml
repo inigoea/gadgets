@@ -22,7 +22,7 @@
 		$.each( obj, function(idx, item){
 			if((idx+1)%2==0){
 				//url
-				var boton = "<a class=\"btn btn-primary btn-round\"> href=\"" + item + "\">" + name + "</a>";
+				var boton = "<a class=\"btn btn-primary btn-round\" href=\"" + item + "\">" + name + "</a>";
 				$('#test').append(boton);
 			}else{
 				//name
