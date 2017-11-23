@@ -65,13 +65,11 @@ function loadData() {
 		var result = prefs.getArray('embed_input_left');	
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
-				//console.log("Array: " + result);
-				//document.getElementById("url_"+idx-(totalLine+1)).value = item;
-				//$("#url_"+idx-(totalLine+1)).val(item);
+				console.log("Array: " + result);
+				$('body').find("#url_"+idx-(totalLine+1)).val(item);
 			}else{
 				if(idx > 0){addLine();}
-				//document.getElementById("name_"+idx-totalLine).value = item;
-				//$("#name_"+idx-totalLine).val(item);
+				$('body').find("#name_"+idx-totalLine).val(item);
 			}
 		});
 	}
@@ -110,24 +108,6 @@ function registerHandlers() {
 	 $('#saveButton').click(handler); 
  }
  gadgets.util.registerOnLoadHandler(registerHandlers);
- 
- 
- $( document ).ready(function() {
-	console.log('ready funcion start');
-	counter = 0;
-	var prefs = new _IG_Prefs();
-		var result = prefs.getArray('embed_input_left');	
-		$.each( result, function(idx, item){
-			if((idx+1)%2==0){
-				console.log($("#url_"+idx-(++counter)));
-				$("#url_"+idx-(++counter)).val(item);
-			}else{
-				console.log($("#name_"+idx-counter));
-				$("#name_"+idx-counter).val(item);
-			}	
-		});
- });
- 
 </script>
 
 Marbles Left:<br />
