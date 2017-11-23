@@ -65,13 +65,13 @@ function loadData() {
 		var result = prefs.getArray('embed_input_left');	
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
-				console.log("#url_"+idx-(totalLine+1));
-				$('body').find("#url_"+idx-(totalLine+1)).val(item);
+				console.log("#url_"+(idx-(totalLine+1)));
+				$('body').find("#url_"+(idx-(totalLine+1))).val(item);
 			}else{
 				if(idx > 0){addLine();}
 				console.log("#name_"+idx-totalLine);
-				console.log($('body').find("#name_"+idx-totalLine));
-				$('body').find("#name_"+idx-totalLine).val(item);
+				console.log($('body').find("#name_"+(idx-totalLine)));
+				$('body').find("#name_"+(idx-totalLine)).val(item);
 			}
 		});
 	}
