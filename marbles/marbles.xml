@@ -24,7 +24,7 @@
 				if((idx+1)%2==0){
 					//url
 					//var boton = "<a class=\"btn btn-primary btn-round\" href=\"" + item + "\"><font size=\"2\">" + name + "</font></a>";
-					var boton = "<button type=\"button\" class=\"btn btn-primary btn-round\" onclick=\"redirect(" + item + ")\"><font size=\"2\">" + name + "</font></button>";
+					var boton = "<button type=\"button\" class=\"btn btn-primary btn-round\" onclick=\"redirect('" + item + "')\"><font size=\"2\">" + name + "</font></button>";
 					$('#test').append(boton);
 				}else{
 					//name
