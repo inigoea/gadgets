@@ -8,6 +8,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://inigoea.github.io/gadgets/marbles/css/bootstrap.css" rel="stylesheet">
+	<link href="https://inigoea.github.io/gadgets/marbles/css/marbles.css" rel="stylesheet">
 	<style>
 	.modal-backdrop.in{
 		opacity: 0 !important;
@@ -21,7 +22,7 @@
 		$.each( obj, function(idx, item){
 			if((idx+1)%2==0){
 				//url
-				var boton = "<a href=\"" + item + "\">" + name + "</a>";
+				var boton = "<a class=\"btn btn-primary btn-round\"> href=\"" + item + "\">" + name + "</a>";
 				$('#test').append(boton);
 			}else{
 				//name
