@@ -23,9 +23,8 @@
 			$.each( obj, function(idx, item){
 				if((idx+1)%2==0){
 					//url
-					//var boton = "<a class=\"btn btn-primary btn-round\" href=\"" + item + "\"><font size=\"2\">" + name + "</font></a>";
 					var boton = "<button type=\"button\" class=\"btn btn-primary btn-round\" onclick=\"redirect('" + item + "')\"><font size=\"2\">" + name + "</font></button>";
-					$('#test').append(boton);
+					$('#left_buttons').append(boton);
 				}else{
 					//name
 					name = item;
@@ -45,8 +44,10 @@
 		});	
 	</script>
 	
-	<div class="" id="test">
-
+	<div class="" id="left_buttons">
+	</div>
+	<div class="float:right" id="right_buttons">
+		<button type="button" class="btn btn-primary btn-round" onclick="redirect('https://sites.google.com/a/bbva.com/arquitectura-ingenieria-espana/')"><font size="2">Arq España</font></button>
 	</div>
 
 
