@@ -124,8 +124,7 @@ function registerHandlers() {
 			}else{
 				console.log($("#name_"+idx-counter));
 				$("#name_"+idx-counter).val(item);
-			}
-			
+			}	
 		});
  });
  
