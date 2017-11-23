@@ -66,10 +66,12 @@ function loadData() {
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
 				console.log("Array: " + result);
-				$("#url_"+idx-(totalLine+1)).val(item);
+				document.getElementById("url_"+idx-(totalLine+1)).value = item;
+				//$("#url_"+idx-(totalLine+1)).val(item);
 			}else{
 				if(idx > 0){addLine();}
-				$("#name_"+idx-totalLine).val(item);
+				document.getElementById("url_"+idx-(totalLine)).value = item;
+				//$("#name_"+idx-totalLine).val(item);
 			}
 		});
 	}
