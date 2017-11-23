@@ -114,17 +114,19 @@ function registerHandlers() {
  
  $( document ).ready(function() {
 	console.log('ready funcion start');
+	counter = 0;
 	var prefs = new _IG_Prefs();
 		var result = prefs.getArray('embed_input_left');	
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
 				console.log("Array: " + result);
-				document.getElementById("url_"+idx-(totalLine+1)).value = item;
+				document.getElementById("url_"+idx-(++counter)).value = item;
 				//$("#url_"+idx-(totalLine+1)).val(item);
 			}else{
-				document.getElementById("name_"+idx-totalLine).value = item;
+				document.getElementById("name_"+idx-counter).value = item;
 				//$("#name_"+idx-totalLine).val(item);
 			}
+			
 		});
  });
  
