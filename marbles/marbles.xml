@@ -59,6 +59,8 @@ function onLoad() {
 			if((idx+1)%2==0){
 				$("#url_"+idx).val(item);
 			}else{
+				console.log("anadiendo linea" + idx);
+				if(idx > 0){addLine();}
 				$("#name_"+idx).val(item);
 			}
 		});
