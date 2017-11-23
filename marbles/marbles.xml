@@ -57,14 +57,14 @@
 <![CDATA[
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-function onLoad() {
+function loadData() {
 		var prefs = new _IG_Prefs();
 		var result = prefs.getArray('embed_input_left');
+		console.log("Array: " + result);
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
 				$("#url_"+idx).val(item);
 			}else{
-				console.log("anadiendo linea" + idx);
 				if(idx > 0){addLine();}
 				$("#name_"+idx).val(item);
 			}
@@ -89,6 +89,7 @@ function removeLine(line){
 	}
  
 function registerHandlers() {
+	 loadData();
 	 var prefs = new gadgets.Prefs();
 	 var items = [];
 	 
