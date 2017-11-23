@@ -119,12 +119,10 @@ function registerHandlers() {
 		var result = prefs.getArray('embed_input_left');	
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
-				console.log("Array: " + result);
-				document.getElementById("url_"+idx-(++counter)).value = item;
-				//$("#url_"+idx-(totalLine+1)).val(item);
+				console.log($("#url_"+url_"+idx-(++counter)));
+				$("#url_"+url_"+idx-(++counter)).val(item);
 			}else{
-				document.getElementById("name_"+idx-counter).value = item;
-				//$("#name_"+idx-totalLine).val(item);
+				$("#name_"+idx-counter).val(item);
 			}
 			
 		});
