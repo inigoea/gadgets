@@ -119,9 +119,10 @@ function registerHandlers() {
 		var result = prefs.getArray('embed_input_left');	
 		$.each( result, function(idx, item){
 			if((idx+1)%2==0){
-				console.log($("#url_"+url_"+idx-(++counter)));
-				$("#url_"+url_"+idx-(++counter)).val(item);
+				console.log($("#url_"+idx-(++counter)));
+				$("#url_"+idx-(++counter)).val(item);
 			}else{
+				console.log($("#name_"+idx-counter));
 				$("#name_"+idx-counter).val(item);
 			}
 			
