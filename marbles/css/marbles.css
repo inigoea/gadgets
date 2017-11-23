@@ -3,4 +3,11 @@
     height: 70px;
     width: 70px;
 	line-height: 58px;
+	text-align: center;
+    padding: 3px;
+}
+
+.btn-primary{
+	background-color:#2dcccd;
+	border-color:#2dcccd;
 }
