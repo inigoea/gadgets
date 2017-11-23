@@ -41,8 +41,7 @@
 	</script>
 	<script>
 		$(document).ready(function(){
-			//load spresheet
-			//document.getElementById('test').innerHTML ;
+			//Nothing to do
 		});	
 	</script>
 	
