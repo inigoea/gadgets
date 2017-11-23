@@ -15,23 +15,28 @@
 	}
 	</style>
 	</div> 
-	<script type="text/javascript"> function onLoad() {
-		var prefs = new _IG_Prefs();
-		var obj = prefs.getArray('embed_input_left');
-		var name = "";
-		$.each( obj, function(idx, item){
-			if((idx+1)%2==0){
-				//url
-				var boton = "<a class=\"btn btn-primary btn-round\" href=\"" + item + "\"><font size=\"2\">" + name + "</font></a>";
-				$('#test').append(boton);
-			}else{
-				//name
-				name = item;
-			}
-			console.log("embed_input_left value is: " + item);
-		});
-			
+	<script type="text/javascript"> 
+		function onLoad() {
+			var prefs = new _IG_Prefs();
+			var obj = prefs.getArray('embed_input_left');
+			var name = "";
+			$.each( obj, function(idx, item){
+				if((idx+1)%2==0){
+					//url
+					//var boton = "<a class=\"btn btn-primary btn-round\" href=\"" + item + "\"><font size=\"2\">" + name + "</font></a>";
+					var boton = "<button type=\"button\" class=\"btn btn-primary btn-round\" onclick=\"redirect(" + item + ")\"><font size=\"2\">" + name + "</font></button>";
+					$('#test').append(boton);
+				}else{
+					//name
+					name = item;
+				}
+				console.log("embed_input_left value is: " + item);
+			});	
 		};
+		function redirect(url){
+			window.top.location.href = url;
+		}
+		
 		gadgets.util.registerOnLoadHandler(onLoad); 
 	</script>
 	<script>
