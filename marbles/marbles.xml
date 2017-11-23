@@ -47,7 +47,7 @@
 	<div style="width: 50%;float: left;" id="left_buttons">
 	</div>
 	<div class="float:right" id="right_buttons">
-		<button style="float: right;background-color:#2dcccd;" type="button" class="btn btn-primary btn-round" onclick="redirect('https://sites.google.com/a/bbva.com/arquitectura-ingenieria-espana/')"><font size="1">Arq España</font></button>
+		<button style="float: right;" type="button" class="btn btn-primary btn-round btn-ARQ" onclick="redirect('https://sites.google.com/a/bbva.com/arquitectura-ingenieria-espana/')"><font size="1">Arq España</font></button>
 	</div>
 	<img style="width: 100%;" src="https://inigoea.github.io/gadgets/marbles/img/cabecera.png">
 
