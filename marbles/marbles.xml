@@ -55,8 +55,13 @@
 function onLoad() {
 		var prefs = new _IG_Prefs();
 		var result = prefs.getArray('embed_input_left');
-		
-		//googleTable.value = result; };
+		$.each( result, function(idx, item){
+			if((idx+1)%2==0){
+				$("#url_"+idx).val(item);
+			}else{
+				$("#name_"+idx).val(item);
+			}
+		});
 	}
 var totalLine = 0;
 	
