@@ -170,7 +170,7 @@
 				<form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" action="" method="POST" target="no-target" class="validate">
 					<input id="input-q1" type="email" 
 					class="txt-box required email" 
-					pattern="[a-z0-9._%+-]+@bbva.com"
+					pattern="[a-z0-9._%+-]+@+(bbva.com|itece.es)"
 					placeholder="EMAIL" name="q1">
 					<input type="submit" value="Solicitar" name="subscribe" id="form-submit" class="button btn btnjoin">
 				</form>
