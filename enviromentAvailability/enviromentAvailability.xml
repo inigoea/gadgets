@@ -45,10 +45,9 @@
 				console.log( "error" );
 				$("#loading").hide();
 				$("#errorImage").show();
-				$("#errorImage").after("<ul><li><b>Opps! No se han podido cargar los datos</b></li>"+
+				$("#message").html("<ul><li><b>Opps! No se han podido cargar los datos</b></li>"+
 				"<li>Por favor, comprueba tu conexion de red interna y/o conexion con el servidor</li>"+
 				"<li>Por favor, comprueba que el navegador que accedes sea firefox</li></ul>");
-				break;
 			});
 			
 		});
@@ -66,6 +65,7 @@
 	    	<tbody id="enviromentTable">
 				<img id="errorImage" style="display: none;" src="https://inigoea.github.io/gadgets/enviromentAvailability/img/firefox.png" height="120">
 				<img id="loading" src="https://inigoea.github.io/gadgets/enviromentAvailability/img/loader.gif" height="40">
+				<div id="message"></div>
 			</tbody>
 		</table>	
 	</div>
