@@ -48,6 +48,7 @@
 				$("#errorImage").after("<ul><li>Opps! No se han podido cargar los datos</li>"+
 				"<li>por favor comprueba tu conexion de red interna y/o conexion con el servidor</li>"+
 				"<li>comprueba que el navegador que accedes sea firefox</li></ul>");
+				break;
 			});
 			
 		});
